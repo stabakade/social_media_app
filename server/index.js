@@ -15,9 +15,8 @@ const mongoose = require('mongoose');
 const app = express();
 
 
-app.use(bodyParser.urlencoded({extended: false}));
-// app.use(bodyParser.json({limit: "30mb", extended: true}));
-// app.use(bodyParser.json({limit: "30mb", extended: true}));
+app.use(bodyParser.json({limit: "30mb", extended: true}));
+app.use(bodyParser.json({limit: "30mb", extended: true}));
 app.use(cors());
 
 //middleware to connect application
