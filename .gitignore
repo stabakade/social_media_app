@@ -21,6 +21,6 @@ yarn-debug.log*
 yarn-error.log*
 
 # notes file
-.things-to-remember.txt 
+/things-to-remember.txt 
 
 
