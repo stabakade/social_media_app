@@ -13,8 +13,19 @@ const getPosts = async (req, res) => {
     }
 }
 
-const createPost = (req, res) => {
-    res.send('Post Creation step!')
+const createPost = async (req, res) => {
+    // req.body allows us to access data in string or JSON object from client
+    const post = req.body;
+    const newPost = new postPost(post);
+    
+    try {
+
+         await newPost.save();
+         res.status(201).json(newPost);
+
+    } catch (error) {
+        res.status(409).json({ message: error.message});
+    }
 }
 
 module.exports = { getPosts, createPost };
